@@ -1,0 +1,29 @@
+{
+  "name": "stephys-bride-guide-landing",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "keystone dev",
+    "start": "keystone start",
+    "build": "keystone build",
+    "postinstall": "keystone postinstall"
+  },
+  "dependencies": {
+    "@keystone-6/auth": "^4.0.0",
+    "@keystone-6/cloudinary": "^4.0.0",
+    "@keystone-6/core": "^2.1.0",
+    "@keystone-6/fields-document": "^4.0.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "nodemailer": "^6.7.6",
+    "socket.io": "^4.5.1",
+    "stripe": "^9.11.0"
+  },
+  "engines": {
+    "node": "^14.15 || ^16.13"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
