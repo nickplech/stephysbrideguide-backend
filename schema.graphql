@@ -159,6 +159,7 @@ type Submission {
   content: String
   eventDate: DateTime
   serviceRequested: String
+  publishedAt: DateTime
   email: String
   mobilePhone: String
   venue: String
@@ -181,6 +182,7 @@ input SubmissionWhereInput {
   content: StringFilter
   eventDate: DateTimeNullableFilter
   serviceRequested: StringNullableFilter
+  publishedAt: DateTimeNullableFilter
   email: StringFilter
   mobilePhone: StringFilter
   venue: StringFilter
@@ -224,6 +226,7 @@ input SubmissionOrderByInput {
   content: OrderDirection
   eventDate: OrderDirection
   serviceRequested: OrderDirection
+  publishedAt: OrderDirection
   email: OrderDirection
   mobilePhone: OrderDirection
   venue: OrderDirection
@@ -238,6 +241,7 @@ input SubmissionUpdateInput {
   content: String
   eventDate: DateTime
   serviceRequested: String
+  publishedAt: DateTime
   email: String
   mobilePhone: String
   venue: String
@@ -257,6 +261,7 @@ input SubmissionCreateInput {
   content: String
   eventDate: DateTime
   serviceRequested: String
+  publishedAt: DateTime
   email: String
   mobilePhone: String
   venue: String
@@ -269,6 +274,7 @@ type Role {
   canSeeOtherUsers: Boolean
   canManageUsers: Boolean
   canManageRoles: Boolean
+  cantDoIt: Boolean
   assignedTo(
     where: UserWhereInput! = {}
     orderBy: [UserOrderByInput!]! = []
@@ -291,6 +297,7 @@ input RoleWhereInput {
   canSeeOtherUsers: BooleanFilter
   canManageUsers: BooleanFilter
   canManageRoles: BooleanFilter
+  cantDoIt: BooleanFilter
   assignedTo: UserManyRelationFilter
 }
 
@@ -306,6 +313,7 @@ input RoleOrderByInput {
   canSeeOtherUsers: OrderDirection
   canManageUsers: OrderDirection
   canManageRoles: OrderDirection
+  cantDoIt: OrderDirection
 }
 
 input RoleUpdateInput {
@@ -313,6 +321,7 @@ input RoleUpdateInput {
   canSeeOtherUsers: Boolean
   canManageUsers: Boolean
   canManageRoles: Boolean
+  cantDoIt: Boolean
   assignedTo: UserRelateToManyForUpdateInput
 }
 
@@ -333,6 +342,7 @@ input RoleCreateInput {
   canSeeOtherUsers: Boolean
   canManageUsers: Boolean
   canManageRoles: Boolean
+  cantDoIt: Boolean
   assignedTo: UserRelateToManyForCreateInput
 }
 

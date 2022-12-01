@@ -60,9 +60,9 @@ export const lists = {
 
       status: select({
         options: [
-          { label: 'Unseen', value: 'unseen' },
-          { label: 'Seen', value: 'seen' },
-          { label: 'Responded', value: 'responded' },
+          { label: 'NEW', value: 'unseen' },
+          { label: 'seen', value: 'seen' },
+          { label: 'replied', value: 'responded' },
         ],
         defaultValue: 'unseen',
         ui: {
@@ -79,6 +79,12 @@ export const lists = {
           { label: 'Not Sure', value: 'tbd' },
         ],
       }),
+      publishedAt: timestamp({
+        defaultValue: { kind: 'now' },
+        access: {
+          update: permissions.cantDoIt,
+        },
+      }),
       email: text({isRequired: true}),
       mobilePhone: text({isRequired: true}),
       venue: text({isRequired: true}),
@@ -86,7 +92,7 @@ export const lists = {
     },
     ui: {
       listView: {
-        initialColumns: ['status','firstName', 'lastName', 'email'],
+        initialColumns: ['publishedAt', 'status','firstName', 'lastName', 'email'],
       },
     },
   }),

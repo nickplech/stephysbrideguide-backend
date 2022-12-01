@@ -36,6 +36,7 @@ model Submission {
   content          String    @default("")
   eventDate        DateTime?
   serviceRequested String?
+  publishedAt      DateTime? @default(now())
   email            String    @default("")
   mobilePhone      String    @default("")
   venue            String    @default("")
@@ -48,5 +49,6 @@ model Role {
   canSeeOtherUsers Boolean @default(false)
   canManageUsers   Boolean @default(false)
   canManageRoles   Boolean @default(false)
+  cantDoIt         Boolean @default(false)
   assignedTo       User[]  @relation("User_role")
 }

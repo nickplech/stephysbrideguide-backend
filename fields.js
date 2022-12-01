@@ -13,6 +13,10 @@ export const permissionFields = {
     defaultValue: false,
     label: 'User can CRUD roles',
   }),
+  cantDoIt: checkbox({
+    defaultValue: false,
+    label: 'Nobody can do it',
+  })
 }
 
 export const permissionsList = Object.keys(permissionFields)
