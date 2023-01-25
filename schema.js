@@ -11,6 +11,7 @@ import {
   timestamp,
   select,
 } from '@keystone-6/core/fields'
+import {newSubmissionEmail} from './lib/mail'
 import { document } from '@keystone-6/fields-document'
 import { cloudinaryImage } from '@keystone-6/cloudinary'
 require('dotenv').config({ path: 'variables.env' })
@@ -88,12 +89,22 @@ export const lists = {
       email: text({isRequired: true}),
       mobilePhone: text({isRequired: true}),
       venue: text({isRequired: true}),
-      additionalInfo: text(),
+      additionalInformation: text(),
     },
     ui: {
       listView: {
         initialColumns: ['publishedAt', 'status','firstName', 'lastName', 'email'],
       },
+    },
+    hooks: {
+      afterOperation: async ({ operation, item }) =>  {
+        if (operation === 'create') {
+          const submissionObj = {firstName: item.firstName, lastName: item.lastName, fianceFirst: item.fianceFirst, email: item.email, eventDate: item.eventDate, serviceRequested: item.serviceRequested, publishedAt: item.publishedAt, mobilePhone: item.mobilePhone, venue: item.venue, additionalInformation: item.additionalInformation }
+
+         await newSubmissionEmail(submissionObj);
+          console.log('thats whats up')
+        }
+      }
     },
   }),
 

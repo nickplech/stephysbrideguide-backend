@@ -28,19 +28,19 @@ model User {
 }
 
 model Submission {
-  id               String    @id @default(cuid())
-  firstName        String    @default("")
-  lastName         String    @default("")
-  fianceFirst      String    @default("")
-  status           String?   @default("unseen")
-  content          String    @default("")
-  eventDate        DateTime?
-  serviceRequested String?
-  publishedAt      DateTime? @default(now())
-  email            String    @default("")
-  mobilePhone      String    @default("")
-  venue            String    @default("")
-  additionalInfo   String    @default("")
+  id                    String    @id @default(cuid())
+  firstName             String    @default("")
+  lastName              String    @default("")
+  fianceFirst           String    @default("")
+  status                String?   @default("unseen")
+  content               String    @default("")
+  eventDate             DateTime?
+  serviceRequested      String?
+  publishedAt           DateTime? @default(now())
+  email                 String    @default("")
+  mobilePhone           String    @default("")
+  venue                 String    @default("")
+  additionalInformation String    @default("")
 }
 
 model Role {

@@ -163,7 +163,7 @@ type Submission {
   email: String
   mobilePhone: String
   venue: String
-  additionalInfo: String
+  additionalInformation: String
 }
 
 input SubmissionWhereUniqueInput {
@@ -186,7 +186,7 @@ input SubmissionWhereInput {
   email: StringFilter
   mobilePhone: StringFilter
   venue: StringFilter
-  additionalInfo: StringFilter
+  additionalInformation: StringFilter
 }
 
 input StringNullableFilter {
@@ -230,7 +230,7 @@ input SubmissionOrderByInput {
   email: OrderDirection
   mobilePhone: OrderDirection
   venue: OrderDirection
-  additionalInfo: OrderDirection
+  additionalInformation: OrderDirection
 }
 
 input SubmissionUpdateInput {
@@ -245,7 +245,7 @@ input SubmissionUpdateInput {
   email: String
   mobilePhone: String
   venue: String
-  additionalInfo: String
+  additionalInformation: String
 }
 
 input SubmissionUpdateArgs {
@@ -265,7 +265,7 @@ input SubmissionCreateInput {
   email: String
   mobilePhone: String
   venue: String
-  additionalInfo: String
+  additionalInformation: String
 }
 
 type Role {
